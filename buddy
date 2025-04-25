@@ -1,0 +1,28 @@
+select="main"
+
+while true
+do
+
+    #header
+
+    clear
+    echo Howdy!
+    echo " "
+    echo Netw: $(iwgetid -r)
+    echo Batt: $(rpibatt)
+    echo " "
+    echo " "
+
+    if [ "$select" = "main" ]; then
+        select="$(cat .mainmenu | grep $select | sed -e 's/^.*#//g' | smenu -n20 -c)"
+        clear
+    else
+        select="$(cat .mainmenu | grep $select | sed -e 's/^.*#//g' | smenu -n20 -c)"
+        clear
+        $select
+        select="main"
+    fi
+    
+done
+
+

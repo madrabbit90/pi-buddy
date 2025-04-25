@@ -1,3 +1,5 @@
+cd
+
 select="main"
 
 while true
@@ -6,7 +8,7 @@ do
     #header
 
     clear
-    echo Howdy!
+    bible-verse
     echo " "
     echo Netw: $(iwgetid -r)
     echo Batt: $(rpibatt)

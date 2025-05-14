@@ -1,0 +1,1 @@
+amixer | grep -v channel | grep Left | grep Play | sed -e 's/\[on\]//g' | sed -e 's/^.*\[/Volume: \[/g'

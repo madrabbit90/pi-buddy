@@ -1,0 +1,15 @@
+ctrl + l
+          buddy
+alt + l
+          buddy
+
+alt + comma
+          brightnessctl s 1-	
+alt + period
+          brightnessctl s +1	
+ctrl + comma
+          amixer -D pulse sset Master 5%- && volspitx
+ctrl + period
+          amixer -D pulse sset Master 5%+ && volspitx
+
+

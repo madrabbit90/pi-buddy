@@ -1,22 +1,30 @@
 main#Docs
 main#Web
-main#Devel
+main#Development
+main#Games
 main#Settings
 main#Power
 
-DocsWebDevelSettingsPower#---
 
-Devel#bash
+Development#bash
 Docs#documents
 Docs#gnumeric
 Web#falkon
-Docs#files
-Devel#pixelorama
+Web#teams
+Docs#ranger
+Development#pixelorama
+Development#inkscape
+Development#geany
+Games#retrogames
 
-Settings#wifi
+Settings#nmtui
+Settings#wifi_on
+Settings#wifi_off
+Settings#bluetui
 Settings#miniserve
 Settings#wallpaper
+Settings#alsamixer
 
 Power#off
 Power#restart
-Power#logout
+Power#stop

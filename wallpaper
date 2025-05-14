@@ -1,0 +1,3 @@
+convert "./Pictures/$(ls Pictures | rofi -dmenu)" -fill black -colorize 80% wall.png
+feh --bg-fill wall.png
+

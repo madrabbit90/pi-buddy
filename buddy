@@ -1,30 +1,26 @@
 cd
+cp .mainmenu .mainmenu2
+
+echo main#_______________ >> .mainmenu2 
+echo main#$(rpibatt) >> .mainmenu2 
+echo main#$(volspit) >> .mainmenu2
+echo main#$(brightnessctl | grep Curr | sed -e 's/^.*Current b/B/g') >> .mainmenu2
+echo main#$(iw dev | grep ssid | sed -e 's/^.*ssid //g') >> .mainmenu2 
 
 select="main"
 
-while true
-do
-
     #header
 
-    clear
-    bible-verse
-    echo " "
-    echo Netw: $(iwgetid -r)
-    echo Batt: $(rpibatt)
-    echo " "
-    echo " "
+        select="$(cat .mainmenu2 | grep $select | sed -e 's/^.*#//g' | rofi -dmenu)"
+        clear
 
-    if [ "$select" = "main" ]; then
-        select="$(cat .mainmenu | grep $select | sed -e 's/^.*#//g' | smenu -n20 -c)"
+        if [ "$select" = "" ]; then
+            exit
+        fi
+
+        select="$(cat .mainmenu2 | grep $select | grep -v main | sed -e 's/^.*#//g' | rofi -dmenu)"
         clear
-    else
-        select="$(cat .mainmenu | grep $select | sed -e 's/^.*#//g' | smenu -n20 -c)"
-        clear
-        $select
+        urxvt -e $select &
         select="main"
-    fi
-    
-done
 
 

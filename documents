@@ -1,0 +1,2 @@
+wordgrinder "./Documents/$(ls Documents | rofi -dmenu)"
+

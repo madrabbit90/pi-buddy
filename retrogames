@@ -1,0 +1,20 @@
+cd
+
+select="main"
+
+    #header
+
+        select="$(ls roms | rofi -dmenu)"
+        clear
+
+        select2="$(ls roms/$select | rofi -dmenu)"
+        clear
+        if [ "$select" = "pico8" ]; then
+            ./pico-8/pico8_64 -run "roms/$select/$select2"
+        fi
+
+        mednafen -fs 1 -sounddriver sdl -autosave 1 -snes.stretch 0 -snes.xscalefs 3 -snes.yscalefs 3 "roms/$select/$select2"
+        
+        select="main"
+
+
